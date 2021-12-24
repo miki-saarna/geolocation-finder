@@ -11,6 +11,7 @@ const findState = () => {
         const longitude = position.coords.longitude;
         const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
         const apiKey = '240d7dac5ea5a90a09b6d0430efaec59';
+        // how do I hide the API key?
         const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
 
         async function findLocation(url) {
@@ -22,8 +23,6 @@ const findState = () => {
                         console.log(data)
                         zip.textContent = data.postcode
                     })
-                // console.log(data)
-                // zip.textContent = data.postcode;
                 
             } catch (error) {
                 throw 'There was an issuing retrieveing your location...';
